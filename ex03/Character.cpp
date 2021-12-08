@@ -8,6 +8,12 @@ std::string const & Character::getName() const
 	return this->_name;
 }
 
+void	Character::setName(std::string name)
+{
+	this->_name = name;
+}
+
+
 void	Character::equip(AMateria* m)
 {
 	if (this->_num_equipped > 3)
@@ -105,8 +111,14 @@ Character & Character::operator = (const Character & character)
 	this->_num_equipped = 0;
 	this->_name = character.getName();
 	i = -1;
-	while (++ i < 4)
+	if (character._num_equipped < 1)
 	{
+		while (++i < 4)
+			this->_materias[i] = 0;
+		return *this;
+	}
+	while (++i < 4)
+	{		
 		if (this->_materias[i])
 			delete this->_materias[i];
 		this->_materias[i] = character._materias[i];

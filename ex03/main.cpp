@@ -112,6 +112,26 @@ int	main()
 	delete src;
 	print("=======================");
 
+	print("=====DEEP COPY TESTS====");
+	Character og("og");
+	Character copy(og);
+
+	print("Initial names : ");
+	print_nonl("og : ");
+	print(og.getName());
+	print_nonl("copy : ");
+	print(copy.getName());
+
+	print("");
+
+	og.setName("og2");
+	print("Names after changing OGs name : ");
+	print_nonl("og : ");
+	print(og.getName());
+	print_nonl("copy : ");
+	print(copy.getName());
+
+	print("=======================");
 	return 0;
 
 }
