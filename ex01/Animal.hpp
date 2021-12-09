@@ -9,12 +9,12 @@ class Animal
 		std::string type;
 	
 	public:
-		virtual Animal();
-		virtual Animal(const Animal &animal);
+		Animal();
+		Animal(const Animal &animal);
 		virtual ~Animal();
 		virtual Animal &operator = (const Animal &animal) = 0;
 
-		std::string getType(void);
+		std::string getType(void) const;
 
 		virtual void		makeSound() const = 0;
 		virtual Brain *getBrain(void) const = 0;
